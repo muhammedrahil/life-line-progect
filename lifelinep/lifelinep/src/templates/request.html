@@ -1,0 +1,42 @@
+{% extends 'donorindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/view_request1#about">
+  <table width="316" border="1" align="center"id="customers">
+    <tr>
+      <th scope="col">ITEM TYPE</th>
+      <th scope="col"><select name="select" id="select">
+        <option value="food">Food</option>
+        <option value="cloths">cloths</option>
+        <option value="health/gadgets">Health/Gadgets</option>
+        <option value="nursery/furniture">Nursery/Furniture</option>
+        <option value="gear">Gear</option>
+        <option value="bath/diapering">Bath/Diapering</option>
+      </select>
+       <input type="submit" name="button" id="button" value="Search" /></th>
+    </tr>
+
+  </table>
+    <br/>
+    <br/>
+    <br/>
+    <table width="500" border="1" align="center">
+    <tr>
+      <th scope="col">ITEM NAME</th>
+      <th scope="col">USER NAME</th>
+      <th scope="col">QUANTITY</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+        {% for i in data %}
+    <tr>
+      <td>{{ i[0] }}</td>
+      <td>{{ i[1] }} {{ i[2] }}</td>
+      <td>{{i[3]  }}</td>
+      <td><a href="{{ url_for('assign_agent',id=i[4]) }}">ASSIGN</a></td>
+    </tr>
+        {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

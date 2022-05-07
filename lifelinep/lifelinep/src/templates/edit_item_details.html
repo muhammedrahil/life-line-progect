@@ -1,0 +1,23 @@
+{% extends 'donorindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/edit_item_details1">
+  <table width="283" border="1" align="center"id="customers">
+    <tr>
+      <th scope="row">ITEM NAME</th>
+      <td><label for="textfield"></label>
+      <input type="text" name="itemm" id="textfield" value="{{ data[3] }}" required/></td>
+    </tr>
+    <tr>
+      <th scope="row">QUANTITY</th>
+      <td><label for="textfield2"></label>
+      <input type="text" name="quan" id="textfield2" value="{{ data[4] }}" required/></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="UPDATE" /></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

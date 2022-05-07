@@ -1,0 +1,23 @@
+{% extends 'donorindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="437" border="1" align="center"id="customers">
+    <tr>
+      <th scope="col">AGENT NAME</th>
+      <th scope="col">ITEM DETAILS</th>
+      <th scope="col">USER DETAILS</th>
+      <th scope="col">STATUS</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ i[0] }} {{ i[1] }}</td>
+      <td>&nbsp;{{ i[2] }}</td>
+      <td>{{ i[3] }} {{ i[4] }}&nbsp;</td>
+      <td>{{ i[5] }}&nbsp;</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

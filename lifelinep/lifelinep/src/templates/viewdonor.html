@@ -1,0 +1,42 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+<div style="overflow:scroll; width:750; height:auto">
+<form id="form1" name="form1" method="" action="/add_donor">
+  <table  border="1" align="center"id="customers">
+    <tr>
+      <th scope="col">NAME</th>
+      <th scope="col">GENDER</th>
+      <th scope="col">DOB</th>
+      <th scope="col">PLACE</th>
+      <th scope="col">POST</th>
+      <th scope="col">PN</th>
+      <th scope="col">EMAIL</th>
+      <th scope="col">PHONE</th>
+      <th scope="col">&nbsp;</th>
+        <th scope="col">&nbsp;</th>
+      
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ i[2] }} {{ i[3] }}</td>
+      <td>&nbsp;{{ i[4] }}</td>
+      <td>&nbsp;{{ i[5] }}</td>
+      <td>&nbsp;{{ i[6] }}</td>
+      <td>&nbsp;{{ i[7] }}</td>
+      <td>&nbsp;{{ i[8] }}</td>
+      <td>&nbsp;{{ i[9] }}</td>
+      <td>&nbsp;{{ i[10] }}</td>
+      <td><a href="{{ url_for('delete_donor',id=i[1] )}}" onclick="return confirm('Are you sure?')">DELETE</a></td>
+      <td><a href="{{ url_for('edit_donor',id=i[1] )}}">EDIT</a></td>
+
+    </tr>
+      {% endfor %}
+  </table>
+    <p  align="center">
+   <input type="submit" name="button" id="button" value="ADD DONOR" />
+    </p>
+</form>
+  </div>
+</body>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'donorindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/assign_agent1">
+  <table width="300" border="1" align="center"id="customers">
+    <tr>
+      <th scope="row">DELIVERY AGENT</th>
+      <td><label for="select"></label>
+        <select name="select" id="select">
+            {% for i in data %}
+            <option value="{{ i[1] }} ">{{ i[2] }} {{ i[3] }}</option>
+            {% endfor %}
+      </select></td>
+    </tr>
+          <tr>
+      <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="ASSIGN" /></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

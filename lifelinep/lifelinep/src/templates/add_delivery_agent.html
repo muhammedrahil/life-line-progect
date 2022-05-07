@@ -1,0 +1,63 @@
+{% extends 'donorindex.html' %}
+{% block body %}
+<body>
+<div style="overflow:scroll; width:750; height:auto">
+<form id="form1" name="form1" method="post" action="/add_delivery_agent1">
+  <table id="customers">
+    <tr>
+      <th scope="row">FIRST NAME</th>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" required pattern="[a-z A-Z]{3,20}"/></td>
+    </tr>
+    <tr>
+      <th scope="row">LAST NAME</th>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" required pattern="[a-z A-Z]{1,20}"/></td>
+    </tr>
+    <tr>
+      <th scope="row">GENDER</th>
+      <td><p>
+        <label>
+          <input type="radio" name="RadioGroup1" value="male" id="RadioGroup1_0" checked/>
+          MALE</label>
+        <br />
+        <label>
+          <input type="radio" name="RadioGroup1" value="female" id="RadioGroup1_1" />
+          FEMALE</label>
+        <br />
+      </p></td>
+    </tr>
+    <tr>
+      <th scope="row">PLACE</th>
+      <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" required pattern="[a-z A-Z]{3,30}" /></td>
+    </tr>
+    <tr>
+      <th scope="row">EMAIL</th>
+      <td><label for="textfield4"></label>
+      <input type="text" name="textfield4" id="textfield4" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/></td>
+    </tr>
+    <tr>
+      <th scope="row">PHONE NUMBER</th>
+      <td><label for="textfield5"></label>
+      <input type="text" name="textfield5" id="textfield5" required pattern="[6789][0-9]{9}"/></td>
+    </tr>
+      <tr>
+      <th scope="row">USERNAME</th>
+      <td><label for="textfield6"></label>
+      <input type="text" name="textfield6" id="textfield6" required /></td>
+    </tr>
+    <tr>
+      <th scope="row">PASSWORD</th>
+      <td><label for="textfield5"></label>
+        <label for="textfield7"></label>
+      <input type="password" name="textfield7" id="textfield7" required /></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="ADD" /></th>
+    </tr>
+  </table>
+</form>
+</div>
+</body>
+{% endblock %}

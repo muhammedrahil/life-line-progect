@@ -1,0 +1,42 @@
+{% extends 'indexadmin.html' %}
+{% block body %}
+<body>
+<form action="/addtransportdept1" method="post">
+
+<div align="center">
+  <table><tr><td>Name:</td>
+
+
+  <td><input type="text" name="textfield" required pattern="[A-Z a-z]{3-26}"/>
+  </td></tr>
+  <tr><td>
+  <p>Place:
+    </td>
+    <td>
+    <input type="text" name="textfield2" required  />
+  </p></td></tr>
+  <tr>
+      <td>
+      <p>Email:
+        </td><td>
+    <input type="text" name="textfield3" required  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
+  </p></td>
+      </tr>
+    <tr><td>
+  <p>Phone:
+  </td><td>
+    <input type="text" name="textfield4" required pattern="[0-9]{10}" />
+
+      </p></td></tr>
+    <tr>
+      <td>
+
+    <input type="submit" name="Submit" value="Submit" />
+      </td></tr>
+
+
+</table>
+  </div>
+</form>
+</body>
+{% endblock %}

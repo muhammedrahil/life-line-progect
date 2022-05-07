@@ -1,0 +1,35 @@
+{% extends 'donorindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/add_item_details1">
+  <table width="309" border="1" align="center"id="customers">
+    <tr>
+      <th scope="row">ITEM TYPE</th>
+      <td><label for="select"></label>
+        <select name="select" id="select">
+          <option value="Food">Food</option>
+          <option value="Cloths">cloths</option>
+          <option value="Health/Gadgets">Health/Gadgets</option>
+          <option value="Nursery/Furniture">Nursery/Furniture</option>
+          <option value="Gear">Gear</option>
+          <option value="Bath/Diapering">Bath/Diapering</option>
+      </select></td>
+    </tr>
+    <tr>
+      <th scope="row">ITEM NAME</th>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" required/></td>
+    </tr>
+    <tr>
+      <th scope="row">QUANTITY</th>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" required /></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="ADD" /></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'donorindex.html' %}
+{% block body %}
+
+<body>
+<form action="/edit_report1" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="332" border="1" align="center"id="customers">
+    <tr>
+      <th scope="row">REPORT</th>
+      <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField" required/></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="UPDATE" /></th>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

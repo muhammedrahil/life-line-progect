@@ -1,0 +1,28 @@
+{% extends 'donorindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="546" border="1" align="center"id="customers">
+    <tr>
+      <th scope="col">ITEM DETAILS</th>
+      <th scope="col">AGENT NAME</th>
+      <th scope="col">USER DETAILS</th>
+      <th scope="col">REPORT</th>
+      <th scope="col">&nbsp;</th>
+       <th scope="col">&nbsp;</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ i[2] }}</td>
+      <td>{{ i[0] }} {{ i[1] }}&nbsp;</td>
+      <td>&nbsp;{{ i[3] }} {{ i[4] }}</td>
+      <td>&nbsp;<a href="static\files\{{ i[5] }}" download>Download</a></td>
+      <td><a href="{{ url_for('edit_report',id=i[6]) }}">EDIT</a></td>
+      <td><a href="{{ url_for('delete_report',id=i[6]) }}" onclick="return confirm('Are you sure?')">DELETE</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

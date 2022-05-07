@@ -1,0 +1,27 @@
+{% extends 'donorindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="" action="/donor_view_report">
+  <table width="456" border="1" align="center"id="customers">
+    <tr>
+      <th scope="col">AGENT NAME</th>
+      <th scope="col">ITEM DETAILS</th>
+      <th scope="col">USER DETAILS</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ i[0] }} {{ i[1] }}&nbsp;</td>
+      <td>&nbsp;{{ i[2] }}</td>
+      <td>&nbsp;{{ i[3] }} {{ i[4] }}</td>
+      <td><a href="{{ url_for('report',id=i[5],aid=i[6],itemid=i[7],userid=i[8])}}">ADD REPORT</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+    <p  align="center">
+   <input type="submit" name="button" id="button" value="VIEW REPORTS" />
+    </p>
+</form>
+</body>
+{% endblock %}

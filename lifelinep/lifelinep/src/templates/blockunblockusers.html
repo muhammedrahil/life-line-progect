@@ -1,0 +1,47 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+<div style="overflow:scroll;width:1000px;height:auto">
+<form id="form1" name="form1" method="post" action="blockunblockdonor">
+  <table width="560" id="customers">
+    <tr>
+      <th width="51" scope="col">first name </th>
+      <th width="88" scope="col">last name </th>
+      <!--<th width="51" scope="col">gender</th>-->
+      <th width="51" scope="col">place</th>
+      <th width="51" scope="col">post</th>
+      <th width="51" scope="col">pin</th>
+      <th width="51" scope="col">phone</th>
+      <th width="51" scope="col">email</th>
+      <th width="138" scope="col">&nbsp;</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i[2]}}</td>
+      <td>{{i[3]}}</td>
+      <!--<td>{{i[3]}}</td>-->
+      <td>{{i[4]}}</td>
+      <td>{{i[5]}}</td>
+      <td>{{i[6]}}</td>
+      <td>{{i[8]}}</td>
+      <td>{{i[9]}}</td>
+      <td>{% if i[10]=='user' %}<p><a href="/block?id={{i[1]}}">Block</a></p>
+        {% else %}
+      <p><a href="/unblock?id={{i[1]}}">unblock</a></p>{% endif %}</td>
+    </tr>
+    {% endfor %}
+      <tr>
+      <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="block donor" /></th>
+    </tr>
+  </table>
+</form>
+</div>
+</body>
+<!--</html>-->
+{% endblock %}
